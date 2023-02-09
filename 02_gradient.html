@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gradient</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            border: 1px solid;
+            margin: 2rem auto;
+        }
+        .linear {
+            /* background-image: linear-gradient(to right, pink 0%, #fff 50%, skyblue ); */
+            /* background-image: linear-gradient(rgb(241, 91, 116), #fff); */
+            background-image: linear-gradient(to right, #57a6db 20%, #fff 20%, #fff 80%, #57a6db 80% );
+        }
+        /* 방향의 기본값은 to bottom 으로 방향을 아래로 하고 싶을때는 생략가능하다 
+            또 시작 색상과 끝 색상의 위치는 생략 가능하다*/
+        .radial {
+            background-image: radial-gradient(circle farthest-side at 50px 50px, #57a6db, #fff)
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Gradient</h1>
+    <div class="box linear">linear gradient</div>
+    <div class="box radial">Radial gradient</div>
+</body>
+
+</html>
+<!-- background-image: linear-gradient(방향, 색상 위치, 색상 위치...); 
+    background-image: radial-gradient(모양 (size) at 중심점(중심점 좌표), 색상 위치, 색상 위치...); 
+
+    모양 (size) 사이즈 지정
+    farthest-corner (기본값)
+    closest-side (가까운 면까지)
+    closest-corner (가까운 모서리까지)
+    farthest-side (먼 면까지)
+    -->
