@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: green;
+            /* animation-name: changecolor;
+            animation-duration: 2s;
+            animation-delay: 1s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: 2;
+            animation-direction: alternate-reverse;
+            animation-timing-function: ease-in; */
+            
+        }
+        /* animation-fill-mode: backwards; 기본값으로 컬러가 다시 원래대로 돌아온다. forwards로 해주면 원래대로 돌아오지 않고 변한 그대로 유지된다*/
+        /* animation: 2s 1s 2; 하나로 합쳐쓸 때 duration과 delay는 순서를 지켜주어야 한다 무조건 듀레이션 속도가 우선임 카운트는 아무데나 써도 됨 */
+        @keyframes changecolor {
+            0% /* 0% = from */ {background-color: green;}
+            50% {background-color: blue; animation-timing-function: ease-out;}
+            100% /* 100% = to */ {background-color: yellow;}
+        }
+        .box:hover {
+            animation: changecolor 2 2s 1s forwards alternate-reverse ease-in;
+        }
+        h2 {
+            animation: fadeUp 0.5s forwards;
+        }
+        header > * {
+            animation: fadeUp 0.5s forwards;
+            position: relative;
+            top: 40px;
+            opacity: 0;
+        }
+        @keyframes fadeUp {
+            from {opacity: 0; top: 40px;}
+            to {opacity: 1; top: 0;}
+        }
+        header h2 {
+            animation-delay: 0.1s;
+        }
+        header p {
+            animation-delay: 0.2s;
+        }
+        header a {
+            animation-delay: 0.3s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">box</div>
+    <hr>
+    <!--  
+        아래쪽으로 40px 내려가고 있고, 투명도 0
+        순차적으로(0.1s간격) 위로(원래위치)올라오고 투명도 1
+        조건: hr 움직이면 안된다.
+        애니메이션의 이름 fadeUp, 시간 0.5초
+    -->
+    <header>
+        <h2>Main title</h2>
+        <p>
+            description
+        </p>
+        <a href="">read more</a>
+    </header>
+    <hr>
+</body>
+
+</html>
+<!-- 반복횟수를 지정할 수 있다
+    애니메이션의 진행방향 지정할 수 있다 
+    진행방향 기본값 : 0% -> 100% 순방향 
+            reverse : 100% -> 0% 역방향
+            alternate : 0% -> 100% -> 0% (반복횟수가 2 이상어야 된다)
+            alternate-reverse : 100% -> 0% -> 100% -->
