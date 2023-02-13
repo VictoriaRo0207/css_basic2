@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform</title>
+    <style>
+        figure {
+            text-align: center;
+            margin: 5rem auto;
+            perspective: 1000px;
+            perspective-origin: 50% 50%;
+        }
+
+        img {
+            transition: 0.4s;
+        }
+        .translate:hover img {
+            /* transform: translate(50px, -50px); */
+            /* transform: translateZ(100px); */
+            transform: translate3d(50px, 50px, 100px);
+        }
+        /* transform: translate(x축, y축); 동시 이동 가능 */
+        /* transform: translateZ(100px) 앞으로 (-100px) 뒤로 */
+        .scale img {
+            /* transform-origin: 0 100%; */
+            transform-origin: 50% 50%;
+            transform: perspective(500px) scaleZ(1) translateZ(100px);
+
+        }
+        /* 중심점 조절 */
+        .scale:hover img {
+            /* transform: scale(1.5, 1.2);  */
+            transform: perspective(500px) scaleZ(2) translateZ(100px);
+        }
+        /* scaleZ 는 위와 같이 원근감 세팅감 translateZ 같이 설정해 주어야하고 이미지와 호버 두군데에 똑같이 작성해주어야 한다  */
+        
+    </style>
+</head>
+
+<body>
+    <h1>transform</h1>
+    <h2>translate</h2>
+    <figure class="translate">
+        <img src="imgs/sample1.jpg">
+        <figcaption>
+            photo description
+        </figcaption>
+    </figure>
+    <hr>
+    <h2>scale</h2>
+    <figure class="scale">
+        <img src="imgs/sample1.jpg">
+        <figcaption>
+            photo description
+        </figcaption>
+    </figure>
+    <hr>
+    <h2>rotate</h2>
+    <figure class="rotate">
+        <img src="imgs/sample1.jpg">
+        <figcaption>
+            photo description
+        </figcaption>
+    </figure>
+    <hr>
+    <h2>skew</h2>
+    <figure class="skew">
+        <img src="imgs/sample1.jpg">
+        <figcaption>
+            photo description
+        </figcaption>
+    </figure>
+
+
+</body>
+
+</html>
+<!-- 이동 : translateX (x축 이동) translateY (y축 이동)
+            translateZ : z축 이동 회전 등등 원근감 세팅을 필수로 해주어야 한다 (perspective: px값;) 중심점을 조절할 수 있다 (perspective-origin: 0 0;)
+            traslate3d(x,y,z)
+     크기 : scale(1.5) 1.5배 확대, scaleX, scaleY, scale(x,y)
+            scaleZ
+     회전 :
+     비틀기 :  -->
