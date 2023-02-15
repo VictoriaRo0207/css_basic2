@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive exercise2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .clearfix:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        header {
+            background: #ebebeb;
+        }
+
+        .container {
+            width: 960px;
+            margin: 0 auto;
+        }
+
+        header h1 {
+            float: left;
+        }
+
+        header h1 a {
+            line-height: 60px;
+            text-decoration: none;
+        }
+
+        header nav {
+            float: right;
+        }
+
+        header nav ul li {
+            float: left;
+            list-style: none;
+            margin-left: 20px;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            line-height: 60px;
+        }
+
+        /* 반응형 */
+
+        /* 960px 이하에서는 좌우 여백 15px이 생기고 로고 왼쪽, 메뉴 오른쪽을 유지한다.  */
+        @media screen and (max-width: 960px) {
+            .container {
+                width: 100%;
+                padding: 0 15px;
+                box-sizing: border-box;
+            }
+        }
+
+        /* 640px 이하에서는 로고를 가운데로, 메뉴는 로고 밑으로 배치한다. */
+        @media screen and (max-width: 640px) {
+            header h1, header nav {
+                float: none;
+            }
+            header h1 {
+                text-align: center;
+            }
+
+            /* 640px 이하에서는 메뉴 사이 간격은 40px을 유지하고 가운데 배치한다 */
+            header nav ul li {
+                margin-right: 20px; 
+            }
+            header nav {
+                text-align: center;
+            }
+            header nav ul {
+                display: inline-block;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container clearfix">
+            <h1><a href="#">Logo</a></h1>
+            <nav>
+                <ul class="clearfix">
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Member Join</a></li>
+                    <li><a href="#">Site map</a></li>
+                    <li><a href="#">Location</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+</body>
+
+</html>
+<!-- 요소 가운데 정렬하기 
+        1. 요소에 너비 width 값이 있으면 
+            >>> margin: 0 auto;
+        2. 요소에 너비 width 값이 없으면 
+            >>> 부모에 text-align
+                배치할 요소에 display: inline-block;
+        3. 요소에 너비 width 값이 없으면 
+            >>> 부모에 display: flex;
+                배치할 요소에 justify-content:center;-->
