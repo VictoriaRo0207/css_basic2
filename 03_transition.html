@@ -11,14 +11,21 @@
             width: 200px;
             opacity: 0.5;
             /* transition-property: width;
-            transition-duration: 0.5s; 0.5초에 걸쳐서 변한다
+                어떤 css의 속성이 바뀌는지
+            transition-duration: 0.5s; 
+                전환되는데 걸리는 시간 0.5초에 걸쳐서 변한다
             transition-delay: 0s;
-            transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1); */
-            /* transition: 
-            width 0.5s 0s cubic-bezier(0.34, 1.56, 0.64, 1), 
-            opacity 0.2s 0s ease-out;  */
-            transition: all 0.5s 0s cubic-bezier(0.34, 1.56, 0.64, 1);
+                바로 바뀔지 딜레이를 줄지
+            transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1); 
+                전환 속도 완급조절 느리다 빠르게 / 빠르다 느리게 / 느리다 빠르게 느리게 등등*/
+            
+            /* transition: width 0.5s 0s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.2s 0s ease-out;  */
+            /* width 가 0.5초에 걸쳐서 딜레이 없이 cubic-bezier 속도로, 
+                opacity가 0.2초에 걸쳐서 딜레이 없이 ease-out 속도로 이미지가 전환된다.  */
+            
+            transition: all 0.5s 0s cubic-bezier(0, 0.79, .94,-0.02);
         }
+        /* width 와 opacity가 동일한 속도와 동일한 시간에 걸쳐서 바뀔 때 */
         /* all 생략 가능 */
 
         div img:hover {
