@@ -8,7 +8,8 @@
     <title>Responsive exercise1</title>
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="responsive.css">
-    <!-- link 로 css 연결할 때 반응형 css 링크가 메인 보다 아래로 와야 반응형 css가 제대로 웹에서 작동한다 -->
+    <!-- link 로 css 연결할 때 
+        반응형 css 링크가 메인 보다 아래로 와야 반응형 css가 제대로 웹에서 작동한다 -->
     <style>
         #wrapper {
             background: #ebebeb;
@@ -45,7 +46,9 @@
             aside {width: 36.5%;} /* 350/960 * 100 = 36.5% */
             article {width: 57.2%;} /* 550/960 * 100 = 36.5% */
         }
-        /* 미디어 쿼리 아래로 써줘야한다 css 우선순위 때문 ! 위로갈 시 일반 #wrapper 부분이 우선순위로 간주되어 웹에 작동함  */
+        /* 미디어 쿼리 아래로 써줘야한다 css 케스케이딩이기 때문 ! 
+            위로갈 시 일반 #wrapper 부분이 우선순위로 간주되어 웹에 작동함  */
+        /* 반응형에서는 선택자를 반드시 동일하게 써주어야 한다 */
     </style>
 </head>
 
